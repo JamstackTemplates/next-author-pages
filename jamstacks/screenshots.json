@@ -1,0 +1,22 @@
+{
+  "templateId": "next-author-pages",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "captures": [
+    {
+      "mode": "light",
+      "sha256": "7b551eb6e8274b8976ceef88f413f31e748ae0ec827ec0cda7f069c7793ce93a",
+      "file": "jamstacks/home-light.jpg",
+      "bytes": 147983
+    },
+    {
+      "mode": "dark",
+      "sha256": "5f4840eeccd5b989d4b020ee4115d4d7fd92580ec53c573034660af2c733e112",
+      "file": "jamstacks/home-dark.jpg",
+      "bytes": 164057
+    }
+  ]
+}

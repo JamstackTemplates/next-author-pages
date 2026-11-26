@@ -1,10 +1,10 @@
 // Public values resolved by lib/config.mjs and substituted by Next.js at build time.
 // No runtime configuration API is needed to render the website.
 export const site = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME ?? 'Jamstacks starter',
+  name: process.env.NEXT_PUBLIC_SITE_NAME ?? 'Wren Calloway',
   description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION ?? '',
   domain: process.env.NEXT_PUBLIC_SITE_DOMAIN ?? '',
-  /** IANA time zone for opening hours (site.config.json `timeZone`), or '' when not set. */
+  /** IANA time zone for local listings (site.config.json `timeZone`), or '' when not set. */
   timeZone: process.env.NEXT_PUBLIC_SITE_TIME_ZONE ?? '',
   /** Absolute deployed URL including any base path, or '' when unknown at build time. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? '',

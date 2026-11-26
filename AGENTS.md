@@ -72,3 +72,22 @@ and Pages never import/read it. Keep site.config.json, the form and workflow out
 light/dark captures after a fresh normal build and run node --test jamstacks/config.test.mjs separately.
 Each new template needs its own business-led layout/fonts/art and OG image; do not ship the neutral
 starter as a final design. Remove `plan/` and `.claude/skills/` before publishing a gallery template once reviewed.
+
+## Author website ownership
+
+Route copy lives in each `app/**/page.tsx`. `content/books.ts` owns book IDs, editions and the
+featured-book selection. `content/events.ts` owns local event times and book references.
+`content/reviews.ts` owns clippings and featured flags. `content/press.ts` owns bios and media-kit
+records. `lib/artwork.ts` shares the jacket and portrait SVGs with `scripts/media-kit.mjs`, which
+validates content and regenerates `public/media-kit/` for dev and build. See README for edit and
+preview steps.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

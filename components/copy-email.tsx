@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { Icon } from './artwork';
 
-/** Progressive enhancement: the mailto link always works; the copy button appears only with JavaScript. */
-export function CopyEmail({ email }: { email: string }) {
+/** Progressive enhancement: the original text stays selectable when copying is unavailable. */
+export function CopyText({ text, label, accessibleLabel }: { text: string; label: string; accessibleLabel?: string }) {
   const [supported, setSupported] = useState(false);
   const [state, setState] = useState<'idle' | 'copied' | 'failed'>('idle');
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -17,7 +18,7 @@ export function CopyEmail({ email }: { email: string }) {
 
   async function copy() {
     try {
-      await navigator.clipboard.writeText(email);
+      await navigator.clipboard.writeText(text);
       setState('copied');
     } catch {
       setState('failed');
@@ -28,12 +29,16 @@ export function CopyEmail({ email }: { email: string }) {
 
   return (
     <>
-      <button type="button" className="button button-quiet" onClick={copy}>
-        Copy address
+      <button type="button" className="button button-quiet" onClick={copy} aria-label={accessibleLabel}>
+        <Icon name="copy"/> {label}
       </button>
       <span className="copy-status text-[.9375rem] text-muted" role="status" aria-live="polite">
-        {state === 'copied' ? 'Copied to clipboard.' : state === 'failed' ? 'Couldn’t copy — select the address instead.' : ''}
+        {state === 'copied' ? 'Copied to clipboard.' : state === 'failed' ? 'Couldn’t copy — select the text instead.' : ''}
       </span>
     </>
   );
+}
+
+export function CopyEmail({ email }: { email: string }) {
+  return <CopyText text={email} label="Copy address"/>;
 }

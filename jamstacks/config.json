@@ -1,0 +1,19 @@
+{
+  "name": "Wren Calloway, Novelist",
+  "description": "Literary author site with books, reviews, events and a media kit.",
+  "tech": "next",
+  "type": "author",
+  "style": "pages",
+  "internal": false,
+  "components": [
+    "support-form"
+  ],
+  "configFile": "site.config.json",
+  "screenshots": {
+    "light": "jamstacks/home-light.jpg",
+    "dark": "jamstacks/home-dark.jpg",
+    "theme": {
+      "strategy": "media"
+    }
+  }
+}

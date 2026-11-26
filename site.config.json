@@ -1,7 +1,8 @@
 {
-  "name": "Jamstacks starter",
-  "description": "A neutral Next.js foundation for Jamstacks websites.",
-  "domain": "",
+  "name": "Wren Calloway",
+  "description": "Wren Calloway is an Edinburgh novelist. Books, reviews, readings and a media kit for press and festival programmers.",
+  "domain": "next-author-pages.jamstacks.net",
+  "timeZone": "Europe/London",
   "jamstacks": {
     "siteId": "",
     "cdnUrl": "https://cdn.jamstacks.net"
